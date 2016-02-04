@@ -67,10 +67,10 @@ lazy val server = (project in file("server"))
       "org.clapper" %% "classutil" % "1.0.5",
       "com.toddfast.typeconverter" % "typeconverter" % "1.0",
       "org.scalaz" %% "scalaz-concurrent" % "7.1.4") ++
-      testlibs(
-        specs2,
-        "org.typelevel" %% "scalaz-specs2" % "0.3.0",
-        "org.scalacheck" %% "scalacheck" % "1.12.5")
+    testlibs(
+      specs2,
+      "org.typelevel" %% "scalaz-specs2" % "0.3.0",
+      "org.scalacheck" %% "scalacheck" % "1.12.5")
   ))
 
 
