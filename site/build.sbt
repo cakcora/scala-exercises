@@ -7,6 +7,10 @@ import NativePackagerHelper._
 // loads the jvm project at sbt startup
 onLoad in Global := (Command.process("project server", _: State)) compose (onLoad in Global).value
 
+// avoid problems with parallel execution in CI environment
+fork in Test := (System.getenv("CI") == null)
+parallelExecution in Test := (System.getenv("CI") == null)
+
 // Common settings
 
 lazy val commonSettings = Seq(
