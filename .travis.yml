@@ -1,11 +1,13 @@
 language: scala
-sudo: required
+sudo: false
 scala:
    - 2.11.7
 jdk:
   - oraclejdk8
 install:
   - gem install sass
+env:
+  - _JAVA_OPTS="-Xmx1G"
 script:
   - cd site/
-  - sbt ++$TRAVIS_SCALA_VERSION compile
+  - sbt ++$TRAVIS_SCALA_VERSION test
